@@ -45,6 +45,7 @@ export default async function ResultPage({ params }: Props) {
     verdict: entry.verdict,
     minutesLate: entry.minutes_late ?? 0,
     isExceeded,
+    modifiers: [], // modifiers computed at submission; not re-derived from stored scores
   }
 
   return (

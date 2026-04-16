@@ -56,7 +56,7 @@ export default async function HallOfFamePage() {
   const entries = await getTopEntries()
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* Nav */}
       <nav className="border-b-2 border-navy">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -70,7 +70,7 @@ export default async function HallOfFamePage() {
         </div>
       </nav>
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
+      <main className="max-w-4xl mx-auto px-6 py-12 flex-1 w-full">
         <div className="mb-10 pt-2">
           <p className="text-xs font-bold uppercase tracking-widest text-ember mb-3">Hall of Fame</p>
           <h1 className="text-4xl font-bold text-navy" style={{ fontFamily: 'Syne, sans-serif' }}>
@@ -142,31 +142,31 @@ export default async function HallOfFamePage() {
 
                   {/* Detail chips */}
                   <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                    <span className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-600">
+                    <span className="px-2.5 py-1 bg-gray-100 text-gray-600">
                       {entry.no_show
                         ? 'No-show'
                         : `${entry.minutes_late ?? 0} min${entry.minutes_late !== 1 ? 's' : ''} late`}
                     </span>
                     {entry.gave_notice ? (
-                      <span className="px-2.5 py-1 rounded-full bg-blue-50 text-blue-600">
+                      <span className="px-2.5 py-1 bg-blue-50 text-blue-600">
                         Notice: {NOTICE_LABELS[entry.notice_timing ?? ''] ?? 'gave notice'}
                       </span>
                     ) : (
-                      <span className="px-2.5 py-1 rounded-full bg-red-50 text-red-600">
+                      <span className="px-2.5 py-1 bg-red-50 text-red-600">
                         No notice given
                       </span>
                     )}
                     {entry.gave_excuse ? (
-                      <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-700">
+                      <span className="px-2.5 py-1 bg-amber-50 text-amber-700">
                         Excuse: {entry.excuse_category?.replace(/_/g, ' ') ?? 'unknown'}
                       </span>
                     ) : (
-                      <span className="px-2.5 py-1 rounded-full bg-orange-50 text-orange-700">
+                      <span className="px-2.5 py-1 bg-orange-50 text-orange-700">
                         No excuse
                       </span>
                     )}
                     <span
-                      className={`px-2.5 py-1 rounded-full ${
+                      className={`px-2.5 py-1 ${
                         entry.forgiven === 'yes_completely' || entry.forgiven === 'mostly'
                           ? 'bg-emerald-50 text-emerald-700'
                           : 'bg-red-50 text-red-600'
@@ -180,7 +180,7 @@ export default async function HallOfFamePage() {
                         ? 'Grudge held'
                         : 'Unresolved'}
                     </span>
-                    <span className="px-2.5 py-1 rounded-full bg-gray-100 text-gray-500">
+                    <span className="px-2.5 py-1 bg-gray-100 text-gray-500">
                       {new Date(entry.created_at).toLocaleDateString('en-GB', {
                         day: 'numeric',
                         month: 'short',
@@ -190,7 +190,7 @@ export default async function HallOfFamePage() {
                   </div>
 
                   {entry.extra_context && (
-                    <p className="mt-3 text-sm text-gray-400 italic border-l-2 border-gray-100 pl-3">
+                    <p className="mt-3 text-sm text-gray-400 italic border-l-2 border-ember/30 pl-3">
                       &ldquo;{entry.extra_context}&rdquo;
                     </p>
                   )}
@@ -200,6 +200,18 @@ export default async function HallOfFamePage() {
           </div>
         )}
       </main>
+
+      {/* Footer */}
+      <footer className="border-t-2 border-navy mt-16 py-6">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 uppercase tracking-widest font-medium">
+          <span>My Friends Are Late</span>
+          <div className="flex gap-8">
+            <Link href="/dashboard" className="hover:text-navy transition-colors">Dashboard</Link>
+            <Link href="/hall-of-fame" className="hover:text-navy transition-colors">Hall of Fame</Link>
+            <Link href="/submit" className="hover:text-navy transition-colors">Submit</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

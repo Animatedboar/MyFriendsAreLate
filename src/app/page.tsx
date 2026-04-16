@@ -50,7 +50,7 @@ export default async function HomePage() {
 
       {/* Nav */}
       <nav className="border-b-2 border-navy">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="font-bold text-navy tracking-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
             My Friends Are Late
           </span>
@@ -74,7 +74,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 opacity-5"
           style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <div className="relative max-w-5xl mx-auto px-6 py-24 sm:py-32">
           <div className="max-w-3xl">
             <p className="text-xs font-bold uppercase tracking-widest text-ember mb-8">
               A social experiment in punctuality
@@ -124,7 +124,7 @@ export default async function HomePage() {
       {/* Stats strip */}
       {stats.total > 0 && (
         <section className="border-b-2 border-navy bg-ember">
-          <div className="max-w-6xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4">
+          <div className="max-w-5xl mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4">
             <p className="text-white/80 text-xs font-bold uppercase tracking-widest">Live data</p>
             <div className="flex gap-8">
               <div className="text-center">
@@ -151,7 +151,7 @@ export default async function HomePage() {
 
       {/* How it works */}
       <section className="border-b-2 border-navy">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-5xl mx-auto px-6 py-20">
           <div className="flex items-baseline gap-6 mb-16">
             <h2 className="text-4xl font-bold text-navy" style={{ fontFamily: 'Syne, sans-serif' }}>How it works</h2>
             <div className="flex-1 border-t-2 border-navy/10" />
@@ -190,7 +190,7 @@ export default async function HomePage() {
 
       {/* Verdicts */}
       <section className="border-b-2 border-navy bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="max-w-5xl mx-auto px-6 py-20">
           <div className="flex items-baseline gap-6 mb-16">
             <h2 className="text-4xl font-bold text-navy" style={{ fontFamily: 'Syne, sans-serif' }}>The Six Verdicts</h2>
             <div className="flex-1 border-t-2 border-navy/10" />
@@ -215,7 +215,7 @@ export default async function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
+      <section className="max-w-5xl mx-auto px-6 py-24">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8">
           <div>
             <h2 className="text-4xl sm:text-5xl font-bold text-navy leading-tight" style={{ fontFamily: 'Syne, sans-serif' }}>
@@ -235,7 +235,7 @@ export default async function HomePage() {
 
       {/* Footer */}
       <footer className="border-t-2 border-navy py-6">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 uppercase tracking-widest font-medium">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 uppercase tracking-widest font-medium">
           <span>My Friends Are Late</span>
           <div className="flex gap-8">
             <Link href="/dashboard" className="hover:text-navy transition-colors">Dashboard</Link>
